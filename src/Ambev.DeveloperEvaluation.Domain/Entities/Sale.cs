@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Ambev.DeveloperEvaluation.Domain.Entities
+{
+    public class Sale
+    {
+        public Guid SaleNumber { get; set; }
+        public DateTime SaleDate { get; set; }
+        public string Customer { get; set; }
+        public decimal TotalAmount { get; set; }
+        public string Branch { get; set; }
+        public List<SaleItem> Items { get; set; } = new();
+        public bool IsCancelled { get; set; }
+    }
+
+    
+}
