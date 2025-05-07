@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Ambev.DeveloperEvaluation.Common.Security;
+using Ambev.DeveloperEvaluation.Domain.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Ambev.DeveloperEvaluation.Domain.Entities
 {
-    public class Sale
+    public class Sale : BaseEntity
     {
         public Guid SaleNumber { get; set; }
         public DateTime SaleDate { get; set; }
