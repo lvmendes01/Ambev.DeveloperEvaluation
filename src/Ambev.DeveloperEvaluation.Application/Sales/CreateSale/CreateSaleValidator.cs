@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-namespace Ambev.DeveloperEvaluation.Application.Sale.CreateSale;
+namespace Ambev.DeveloperEvaluation.Application.Sales.CreateSale;
 public class CreateSaleCommandValidator : AbstractValidator<CreateSaleCommand>
 {
  
