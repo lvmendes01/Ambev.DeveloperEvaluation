@@ -8,7 +8,13 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
     public class Sale : BaseEntity
     {
         public Guid SaleNumber { get; set; }
-        public DateTime SaleDate { get; set; }
+        private DateTime _saleDate;
+        public DateTime SaleDate
+        {
+            get => _saleDate;
+            set => _saleDate = DateTime.SpecifyKind(value, DateTimeKind.Unspecified);
+        }
+
         public string Customer { get; set; }
         public decimal TotalAmount { get; set; }
 
