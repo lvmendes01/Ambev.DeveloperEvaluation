@@ -21,8 +21,12 @@ public class DefaultContext : DbContext
         modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         modelBuilder.Entity<Sale>()
-    .Property(s => s.SaleDate)
-    .HasColumnType("timestamp with time zone");
+        .Property(s => s.SaleDate)
+        .HasColumnType("timestamp with time zone");
+
+
+
+
         base.OnModelCreating(modelBuilder);
     }
 }

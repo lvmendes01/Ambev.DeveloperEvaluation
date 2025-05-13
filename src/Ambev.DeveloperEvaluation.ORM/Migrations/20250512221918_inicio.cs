@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Ambev.DeveloperEvaluation.WebApi.Migrations
+namespace Ambev.DeveloperEvaluation.ORM.Migrations
 {
     /// <inheritdoc />
-    public partial class addTabelaVenda : Migration
+    public partial class inicio : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,7 +17,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false, defaultValueSql: "gen_random_uuid()"),
                     SaleNumber = table.Column<Guid>(type: "uuid", nullable: false),
-                    SaleDate = table.Column<DateTime>(type: "timestamp", nullable: false, defaultValueSql: "now()"),
+                    SaleDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "now()"),
                     Customer = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     TotalAmount = table.Column<decimal>(type: "numeric(18,2)", nullable: false),
                     Branch = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),

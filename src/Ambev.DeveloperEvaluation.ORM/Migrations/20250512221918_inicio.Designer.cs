@@ -9,11 +9,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Ambev.DeveloperEvaluation.WebApi.Migrations
+namespace Ambev.DeveloperEvaluation.ORM.Migrations
 {
     [DbContext(typeof(DefaultContext))]
-    [Migration("20250512123507_ChangeToTimestampWithTimeZone")]
-    partial class ChangeToTimestampWithTimeZone
+    [Migration("20250512221918_inicio")]
+    partial class inicio
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Migrations
 
                     b.Property<DateTime>("SaleDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp")
+                        .HasColumnType("timestamp with time zone")
                         .HasDefaultValueSql("now()");
 
                     b.Property<Guid>("SaleNumber")
