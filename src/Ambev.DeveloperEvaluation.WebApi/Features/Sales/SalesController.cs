@@ -19,12 +19,7 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
-
-        /// <summary>
-        /// Initializes a new instance of SalesController
-        /// </summary>
-        /// <param name="mediator">The mediator instance</param>
-        /// <param name="mapper">The AutoMapper instance</param>
+        
         public SalesController(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
@@ -33,11 +28,10 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
 
         /// <summary>
 
-        /// Creates a new sale
+        /// Nova Venda
         /// </summary>
-        /// <param name="request">The sale creation request</param>
-        /// <param name="cancellationToken">Cancellation token</param>
-        /// <returns>The created sale details</returns>
+        /// <param name="request">Requisição Objeto</param>
+        /// <returns>Venda </returns>
         [HttpPost]
         [ProducesResponseType(typeof(ApiResponseWithData<CreateSaleResponse>), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
@@ -76,11 +70,10 @@ namespace Ambev.DeveloperEvaluation.WebApi.Features.Sales
 
 
         /// <summary>
-        /// Retrieves a Sale by their ID
+        /// Retorno do detalhe de uma venda pelo GUID
         /// </summary>
-        /// <param name="id">The unique identifier of the Sale</param>
-        /// <param name="cancellationToken">Cancellation token</param>
-        /// <returns>The Sale details if found</returns>
+        /// <param name="id">Identificador GUID</param>
+        /// <returns> Retorno da venda  </returns>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ApiResponseWithData<GetSaleResponse>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
