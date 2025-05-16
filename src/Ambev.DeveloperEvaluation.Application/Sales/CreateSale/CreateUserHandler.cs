@@ -47,8 +47,17 @@ public class CreateSaleHandler : IRequestHandler<CreateSaleCommand, CreateSaleRe
         var Sale = _mapper.Map<Sale>(command);
 
 
-        var createdSale = await _SaleRepository.CreateAsync(Sale, cancellationToken);
-        var result = _mapper.Map<CreateSaleResult>(createdSale);
-        return result;
+        try
+        {
+            var createdSale = await _SaleRepository.CreateAsync(Sale, cancellationToken);
+            var result = _mapper.Map<CreateSaleResult>(createdSale);
+            return result;
+        }
+        catch (Exception ex)
+        {
+
+            throw;
+        }
+       
     }
 }
