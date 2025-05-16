@@ -14,6 +14,7 @@ namespace Ambev.DeveloperEvaluation.Domain.Entities
         public string Branch { get; set; } = string.Empty;
         public List<SaleItem> Items { get; set; } = new();
         public bool IsCancelled { get; set; }
+
     }
 
 
